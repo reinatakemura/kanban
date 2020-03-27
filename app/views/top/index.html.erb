@@ -1,7 +1,7 @@
 <div class="topPage">
   <div class="listWrapper">
     <% @lists.each do |list| %>
-      <div class="list">
+      <div class="list sortable_list">
         <div class="list_header">
           <h2 class="list_header_title"><%= list.title %></h2>
           <div class="list_header_action">
@@ -11,21 +11,26 @@
         </div>
 
         <div class="cardWrapper">
-        
-          <% list.cards.each do |card| %>
-            <%= link_to list_card_path(list, card), class: "cardDetail_link" do%>
-              <div class="card">
-                <h3 class="card_title">
-                  <%= card.title %>
-                </h3>
-                <% if card.memo.size > 0 %>
-                  <div class="card_detail is-exist">
-                    <i class="fas fa-bars"></i>
+          <ul>
+            <% list.cards.each do |card| %>
+            <div class="item" data-model-name="card", data-update-url=<%="/list/#{list.id}/card/#{card.id}/sort"%>>
+              <li>
+                <%= link_to list_card_path(list, card), class: "cardDetail_link" do %>
+                  <div class="card">
+                    <h3 class="card_title">
+                      <%= card.title %>
+                    </h3>
+                    <% if card.memo.size > 0 %>
+                      <div class="card_detail is-exist">
+                        <i class="fas fa-bars"></i>
+                      </div>
+                    <% end %>
                   </div>
                 <% end %>
-              </div>
-            <% end%>
-          <% end%>
+              </li>
+            </div>
+            <% end %>
+          </ul>
             
           <div class="addCard">
             <i class="far fa-plus-square"></i>

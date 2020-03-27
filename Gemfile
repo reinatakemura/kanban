@@ -69,3 +69,9 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'devise'
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 gem 'pry-rails'
+
+# モデルに順番の概念を与える
+# gem 'acts_as_list'
+gem 'ranked-model'
+# jQueryUIとは、jQueryをベースにしたJavaScriptのライブラリです。jquery-ui-railsはそれをrailsに導入するためのgem
+gem 'jquery-ui-rails'

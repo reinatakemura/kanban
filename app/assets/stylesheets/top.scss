@@ -39,6 +39,10 @@
       .cardWrapper {
         overflow: scroll;
         max-height: 76vh;
+        ul {
+          list-style: none;
+          padding: 0;
+        }
         .cardDetail_link {
           text-decoration: none;
           color: #323232;

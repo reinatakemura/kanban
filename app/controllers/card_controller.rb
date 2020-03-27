@@ -1,6 +1,10 @@
 class CardController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-
+  
+  def index
+    @cards = Card.rank(:row_order)
+  end
+  
   def new
     @card = Card.new
     @list = List.find_by(id: params[:list_id])
@@ -35,9 +39,16 @@ class CardController < ApplicationController
     redirect_to :root
   end
 
+  def sort
+    card = Card.find(params[:card_id])
+    card.update(card_params)
+    # render nothing: true
+    render body: nil
+  end
+
   private
     def card_params
-      params.require(:card).permit(:title, :memo, :list_id)
+      params.require(:card).permit(:title, :memo, :list_id, :row_order_position)
     end
 
     def set_card
