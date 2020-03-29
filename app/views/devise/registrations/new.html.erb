@@ -6,7 +6,8 @@
   </div>
   <div class="container">
     <%= form_with scope: resource, as: resource_name, url: registration_path(resource_name), html: {class: "mt-5, signupForm" }, local: true do |f| %>
-      <%= devise_error_messages! %>
+       <%= devise_error_messages! %>
+
       <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class: "form-control", placeholder: "名前を入力してください"%>
@@ -30,6 +31,18 @@
       <div class="text-center">
         <%= f.submit "アカウントを作成", class: "btn submitBtn" %>
       </div>
+
+<!--      <div class="test-user text-center">
+        <i class="fas fa-user"></i>
+        <p>テストユーザーとしてログインできます</p>
+        <p>⬇︎</p>
+        <%= f.hidden_field :name, value: 'test-user' %>
+        <%= f.hidden_field :email, value: 'test@example.com' %>
+        <%= f.hidden_field :password, value: '123456' %>
+        <%= f.submit 'テストサインイン', class: 'btn submitBtn' %>
+      </div>
+-->      
+
     <% end %>
   </div>
 </div>

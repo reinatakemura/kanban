@@ -11,26 +11,35 @@
         </div>
 
         <div class="cardWrapper">
-          <ul>
+          <table>
             <% list.cards.each do |card| %>
-            <div class="item" data-model-name="card", data-update-url=<%="/list/#{list.id}/card/#{card.id}/sort"%>>
-              <li>
-                <%= link_to list_card_path(list, card), class: "cardDetail_link" do %>
-                  <div class="card">
-                    <h3 class="card_title">
-                      <%= card.title %>
-                    </h3>
-                    <% if card.memo.size > 0 %>
-                      <div class="card_detail is-exist">
-                        <i class="fas fa-bars"></i>
-                      </div>
-                    <% end %>
-                  </div>
+              <tr class="item" data-model-name="card", data-update-url=<%="/list/#{list.id}/card/#{card.id}/sort"%>>
+                <% if card.status == "未実施" %>
+                  <td class="item__status item__status--yet">
+                <% elsif card.status == "実施中" %>
+                  <td class="item__status item__status--now">
+                <% else %>
+                  <td class="item__status item__status--done">
                 <% end %>
-              </li>
-            </div>
+                  <%= card.status %>
+                  </td>
+                <td class="col-12">
+                  <%= link_to list_card_path(list, card), class: "cardDetail_link" do %>
+                    <div class="card">
+                      <h3 class="card_title">
+                        <%= card.title %>
+                      </h3>
+                      <% if card.memo.size > 0 %>
+                        <div class="card_detail is-exist">
+                          <i class="fas fa-bars"></i>
+                        </div>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </td>
+              </tr>
             <% end %>
-          </ul>
+          </table>
             
           <div class="addCard">
             <i class="far fa-plus-square"></i>
@@ -41,4 +50,7 @@
       </div>
     <% end %>
   </div>
+  <%# <div class="chart">
+      <%= pie_chart @chart %>
+  <%# </div> %>
 </div>

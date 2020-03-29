@@ -61,17 +61,16 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'bootstrap', '~> 4.4.1'
-gem 'jquery-rails'
-
-gem 'font-awesome-sass', '~> 5.12.0'
-
-gem 'devise'
-gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 gem 'pry-rails'
-
+gem 'devise'
+gem 'kaminari'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.4.1'
+gem 'font-awesome-sass', '~> 5.12.0'
 # モデルに順番の概念を与える
-# gem 'acts_as_list'
 gem 'ranked-model'
 # jQueryUIとは、jQueryをベースにしたJavaScriptのライブラリです。jquery-ui-railsはそれをrailsに導入するためのgem
 gem 'jquery-ui-rails'
+
+gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+

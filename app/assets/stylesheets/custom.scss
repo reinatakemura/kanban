@@ -142,3 +142,26 @@ body {
     }
   }
 }
+
+// test-user
+.test-user {
+  margin-top: 4vh;
+  p {
+    margin: 0;
+  }
+}
+
+// error-message
+.notification {
+  background-color: #F35500;
+  color: #fff;
+  text-align: center;
+}
+
+// 効いてない
+// devise_error_messages!
+// .error_explanation {
+//   background-color: #F35500;
+//   color: #fff;
+//   text-align: center;
+// }
