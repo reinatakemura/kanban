@@ -1,6 +1,14 @@
 class ListController < ApplicationController
   before_action :set_list, only: [:edit, :update, :destroy]
   
+  def index
+    # @chart = [
+    #   ["未実施", @list.card.where(status: 0).length],
+    #   ["実施中", @list.card.where(status: 1).length],
+    #   ["達成", @list.card.where(status: 2).length]
+    # ]
+  end
+
   def new
     @list = List.new
   end

@@ -39,9 +39,19 @@
       .cardWrapper {
         overflow: scroll;
         max-height: 76vh;
-        ul {
-          list-style: none;
-          padding: 0;
+        .item__status {
+          font-size: 11px;
+          padding-bottom: 15px;
+          margin: 0 auto;
+        }
+        .item__status--yet {
+          background: rgba(224, 224, 224, 0.7);
+        }
+        .item__status--now {
+          background: rgba(165, 214, 167, 0.7);
+        }
+        .item__status--done {
+          background: rgba(240, 98, 146, 0.7);
         }
         .cardDetail_link {
           text-decoration: none;
@@ -73,4 +83,7 @@
       }
     }
   }
+}
+.chart {
+  border: 1px solid red;
 }

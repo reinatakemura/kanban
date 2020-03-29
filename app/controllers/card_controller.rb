@@ -24,6 +24,7 @@ class CardController < ApplicationController
 
   def edit
     @lists = List.where(user: current_user)
+    @statuses = Card.where(user: current_user)
   end
 
   def update
@@ -42,13 +43,12 @@ class CardController < ApplicationController
   def sort
     card = Card.find(params[:card_id])
     card.update(card_params)
-    # render nothing: true
     render body: nil
   end
 
   private
     def card_params
-      params.require(:card).permit(:title, :memo, :list_id, :row_order_position)
+      params.require(:card).permit(:title, :memo, :list_id, :status, :row_order_position)
     end
 
     def set_card

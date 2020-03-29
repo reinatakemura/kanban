@@ -1,0 +1,21 @@
+// usersPage
+.usersPage {
+  margin-top: 10vh;
+  .titleArea {
+    text-align: center;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  .container {
+    max-width: 500px;
+    margin: 40px auto 0;
+    font-size: 20px;
+    td{
+      width: 500px;
+      height: 50px;
+      border-bottom: 1px solid #ccc;
+      padding-top: 30px;
+     }
+  }
+}

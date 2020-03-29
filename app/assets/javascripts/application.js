@@ -13,6 +13,8 @@
 //= require activestorage
 //= require jquery3
 //= require rails-ujs
+//= require chartkick
+//= require Chart.bundle
 //= require jquery-ui/widgets/sortable
 //= require turbolinks
 //= require popper
